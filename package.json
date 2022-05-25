@@ -1,14 +1,18 @@
 {
-  "name": "theui-test",
-  "version": "0.9.0",
+  "name": "@theui/core",
+  "version": "0.9.2",
   "description": "TheUI core libraries for theui components.",
   "main": "index.js",
+  "author" : {
+    "name" : "M B Parvez",
+    "url" : "https://www.mbparvez.me"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theUIxyz/core.git"
+    "url": "git+https://github.com/theUIxyz/core"
   },
   "keywords": [
     "theui",
@@ -19,18 +23,17 @@
     "library",
     "components",
     "library",
-    "svelte",
-    "sveltekit",
-    "svelte",
+    "tailwindcss",
     "components"
   ],
-  "author": "M B Parvez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/theUIxyz/core/issues"
   },
   "homepage": "https://github.com/theUIxyz/core#readme",
   "devDependencies": {
-    "@types/node": "^17.0.35"
+    "@types/node": "^17.0.35",
+    "tailwindcss": "^3.0.24",
+    "@tailwindcss/forms": "^0.5.2"
   }
 }

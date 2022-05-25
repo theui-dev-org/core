@@ -1,10 +1,10 @@
-export type ANIMATE_SPEED_TYPE  = 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
-export type ButtonType          = 'button'| 'reset'| 'submit'
-export type INPUT_TYPE          = 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'search'| 'tel'| 'text'| 'textarea' | 'time'| 'url' | 'week'
-export type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none' | boolean
-export type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none' | boolean
+type ANIMATE_SPEED_TYPE  = 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+type ButtonType          = 'button'| 'reset'| 'submit'
+type INPUT_TYPE          = 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'search'| 'tel'| 'text'| 'textarea' | 'time'| 'url' | 'week'
+type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none' | boolean
+type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none' | boolean
 
-export type CORE = {
+type CORE = {
   isRounded             : boolean,
   toggleTheme           : boolean|'system',
   animate               : boolean,
@@ -13,7 +13,7 @@ export type CORE = {
   reset                 : boolean,
 }
 
-export type ACCORDION_CONFIG_TYPE = {
+type ACCORDION_CONFIG_TYPE = {
   animate           : boolean,
   animateSpeed      : ANIMATE_SPEED_TYPE,
   bodyActiveCls     : string,
@@ -30,13 +30,13 @@ export type ACCORDION_CONFIG_TYPE = {
   titleCls          : string,
 }
 
-export type BREADCRUMB_DATA_TYPE = {
+type BREADCRUMB_DATA_TYPE = {
   active ?: boolean,
   text: string,
   href: string,
 }
 
-export type BUTTON_CONFIG_TYPE = {
+type BUTTON_CONFIG_TYPE = {
   active        : boolean|string,
   animate       : boolean,
   animateSpeed  : ANIMATE_SPEED_TYPE,
@@ -50,12 +50,12 @@ export type BUTTON_CONFIG_TYPE = {
   theme         : string|undefined,
 }
 
-export type COLLAPSE_CONFIG_TYPE = {
+type COLLAPSE_CONFIG_TYPE = {
   animate       : boolean,
   animateSpeed  : ANIMATE_SPEED_TYPE,
 }
 
-export type DD_CONFIG_TYPE = {
+type DD_CONFIG_TYPE = {
   animate             : boolean,
   animateSpeed        : ANIMATE_SPEED_TYPE,
   animation           : 'slide-left' | 'slide-up' | 'slide-right' | 'slide-down' | 'fade' | 'zoom-in' | 'zoom-out',
@@ -74,7 +74,7 @@ export type DD_CONFIG_TYPE = {
   theme               : string
 }
 
-export type DD_ITEM_CONFIG_TYPE = {
+type DD_ITEM_CONFIG_TYPE = {
   active          : boolean,
   activeTheme     : string,
   dividerTheme    : string,
@@ -86,7 +86,7 @@ export type DD_ITEM_CONFIG_TYPE = {
   reset           : boolean,
   theme           : string,
 }
-export type DD_DATA = {
+type DD_DATA = {
   active ?: boolean,
   divider ?: boolean,
   header ?: boolean,
@@ -97,32 +97,7 @@ export type DD_DATA = {
   text ?: string,
 }
 
-export type INPUT_CONFIG_TYPE = {
-  animate       : boolean,
-  animateSpeed  : ANIMATE_SPEED_TYPE,
-  appearance    : 'default' | 'flat' | 'material',
-  containerCls  : string,
-  grow          : boolean,
-  inputCls      : string|object,
-  inputFocusCls : string|object,
-  labelStyle    : LABEL_STYLE_TYPE,
-  marginBottom  : 0 | 4 | 8 | 12,
-  reset         : boolean,
-  rounded       : ROUNDED_TYPE,
-  size          : 'xs' | 'sm' | 'md' | 'lg' | 'xl',
-  theme         : string,
-}
-
-export type LABEL_STYLE_TYPE = {
-  cls           : string,
-  color         : string,
-  fontWeight    : string,
-  marginBottom  : 0 | 2 | 4 | 6,
-  textSize      : string,
-  transform     : string,
-}
-
-export type MODAL_CONFIG_TYPE = {
+type MODAL_CONFIG_TYPE = {
   animate         : boolean,
   animateSpeed    : ANIMATE_SPEED_TYPE,
   animation       : 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
@@ -138,7 +113,7 @@ export type MODAL_CONFIG_TYPE = {
   theme           : string,
 }
 
-export type NAV_CONFIG_TYPE = {
+type NAV_CONFIG_TYPE = {
   animate               : boolean,
   animateSpeed          : ANIMATE_SPEED_TYPE,
   cls                   : string,
@@ -151,7 +126,7 @@ export type NAV_CONFIG_TYPE = {
   theme                 : string,
 }
 
-export type NOTIFY_CONFIG_TYPE = {
+type NOTIFY_CONFIG_TYPE = {
   id          : string,
   position    : 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left',
   removeAfter : number,
@@ -161,7 +136,7 @@ export type NOTIFY_CONFIG_TYPE = {
   theme       : string|undefined,
 }
 
-export type OFFCANVAS_CONFIG_TYPE = {
+type OFFCANVAS_CONFIG_TYPE = {
   animate         : boolean,
   animateSpeed    : ANIMATE_SPEED_TYPE,
   backdrop        : boolean,
@@ -172,7 +147,7 @@ export type OFFCANVAS_CONFIG_TYPE = {
   theme           : string,
 }
 
-export type PROGRESS_CONFIG_TYPE = {
+type PROGRESS_CONFIG_TYPE = {
   animate         : boolean,
   animateSpeed    : ANIMATE_SPEED_TYPE,
   height          : 'px' | 'sm' | 'md' | 'lg' | 'xl' | 'none',
@@ -184,7 +159,7 @@ export type PROGRESS_CONFIG_TYPE = {
   theme           : string,
 }
 
-export type TAB_CONFIG_TYPE = {
+type TAB_CONFIG_TYPE = {
   activeTabTheme  : object|string,
   animate         : boolean,
   animateSpeed    : ANIMATE_SPEED_TYPE,
@@ -196,7 +171,7 @@ export type TAB_CONFIG_TYPE = {
   tabTheme        : object|string,
 }
 
-export type TOOLTIP_CONFIG_TYPE = {
+type TOOLTIP_CONFIG_TYPE = {
   animate       : boolean,
   animateSpeed  : ANIMATE_SPEED_TYPE,
   animation     : 'fade' | 'slide' | 'zoom-in' | 'zoom-out',
@@ -204,3 +179,54 @@ export type TOOLTIP_CONFIG_TYPE = {
   rounded       : ROUNDED_TYPE,
   // theme         : string,
 }
+
+
+// FORM CONTROLS AND DATA TYPES
+type INPUT_CONFIG_TYPE = {
+  animate       : boolean,
+  animateSpeed  : ANIMATE_SPEED_TYPE,
+  appearance    : 'default' | 'flat' | 'material',
+  containerCls  : string,
+  fileBtnCls   ?: string,
+  fileBtnTheme ?: string,
+  grow          : boolean,
+  inputCls      : string|object,
+  inputFocusCls : string|object,
+  labelStyle    : LABEL_STYLE_TYPE,
+  marginBottom  : 0 | 4 | 8 | 12,
+  reset         : boolean,
+  rounded       : ROUNDED_TYPE,
+  size          : 'none' |'xs' | 'sm' | 'md' | 'lg' | 'xl',
+  theme         : string,
+}
+
+type LABEL_STYLE_TYPE = {
+  cls           : string,
+  color         : string,
+  fontWeight    : string,
+  marginBottom  : 0 | 2 | 4 | 6,
+  textSize      : string,
+  transform     : string,
+}
+
+type CHECKBOX_RADIO_CONFIG_TYPE = {
+  cls       : string,
+  disabled  : boolean,
+  rounded   : ROUNDED_TYPE,
+  size      : 'md' | 'lg' | 'xl',
+  theme     : string,
+}
+
+type SELECT_DATA_TYPE = {
+  disabled ?: boolean,
+  selected ?: boolean,
+  text      : string,
+  value    ?: any,
+}
+
+export type { ANIMATE_SPEED_TYPE, ButtonType, INPUT_TYPE, ROUNDED_TYPE, SHADOW_TYPE, CORE,
+  ACCORDION_CONFIG_TYPE, BREADCRUMB_DATA_TYPE, BUTTON_CONFIG_TYPE, COLLAPSE_CONFIG_TYPE,
+  DD_CONFIG_TYPE, DD_ITEM_CONFIG_TYPE, DD_DATA, MODAL_CONFIG_TYPE, NAV_CONFIG_TYPE,
+  NOTIFY_CONFIG_TYPE, OFFCANVAS_CONFIG_TYPE, PROGRESS_CONFIG_TYPE, TAB_CONFIG_TYPE,
+  TOOLTIP_CONFIG_TYPE, INPUT_CONFIG_TYPE, LABEL_STYLE_TYPE, CHECKBOX_RADIO_CONFIG_TYPE,
+  SELECT_DATA_TYPE}
