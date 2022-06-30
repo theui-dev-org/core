@@ -1,6 +1,6 @@
 {
   "name": "@theui/core",
-  "version": "0.9.4",
+  "version": "0.18.0",
   "description": "TheUI core libraries for theui components.",
   "main": "index.js",
   "author" : {
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/theUIxyz/core#readme",
   "devDependencies": {
     "@types/node": "^17.0.35",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.1.2"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2"
