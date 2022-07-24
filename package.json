@@ -1,6 +1,6 @@
 {
   "name": "@theui/core",
-  "version": "0.18.0",
+  "version": "0.18.2",
   "description": "TheUI core libraries for theui components.",
   "main": "index.js",
   "author" : {
