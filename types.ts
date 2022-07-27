@@ -148,10 +148,11 @@ type POPUP_CONFIG_TYPE = {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   backdrop        ?: boolean,
-  backDropClass   ?: string,
+  backdropClass   ?: string,
   containerClass  ?: string,
   contentClass    ?: string,
   rounded         ?: ROUNDED_TYPE,
+  staticBackdrop  ?: boolean
 }
 
 type PROGRESS_CONFIG_TYPE = {
