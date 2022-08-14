@@ -1,10 +1,8 @@
-type ANIMATE_SPEED_TYPE  = 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
-type ButtonType          = 'button'| 'reset'| 'submit'
-type INPUT_TYPE          = 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'search'| 'tel'| 'text'| 'textarea' | 'time'| 'url' | 'week'
-type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none'
-type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
+export type ANIMATE_SPEED_TYPE  = 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+export type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none'
+export type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
 
-type SITE = {
+export interface SITE {
   siteName          : string,
   slogan           ?: string,
   description       : string,
@@ -23,7 +21,7 @@ type SITE = {
   gtmCode          ?: string,
 }
 
-type CORE = {
+export interface CORE {
   isRounded             : boolean,
   toggleTheme           : boolean|'system',
   animate               : boolean,
@@ -31,13 +29,14 @@ type CORE = {
   reset                 : boolean,
 }
 
-type ACCORDION_CONFIG_TYPE = {
+export interface ACCORDION_CONFIG_TYPE {
   animate               ?: boolean,
   animateSpeed          ?: ANIMATE_SPEED_TYPE,
   containerActiveClass  ?: Object|string,
   containerClass        ?: Object|string,
   contentActiveClass    ?: Object|string,
   contentClass          ?: Object|string,
+  gap                   ?: 0|2|4|8|12|16,
   rounded               ?: ROUNDED_TYPE,
   size                  ?: 'compact' | 'default' | 'large',
   titleActiveClass      ?: Object|string,
@@ -45,13 +44,13 @@ type ACCORDION_CONFIG_TYPE = {
   type                  ?: 'default' | 'flush',
 }
 
-type BREADCRUMB_DATA_TYPE = {
+export interface BREADCRUMB_DATA_TYPE {
   active ?: boolean,
   text    : string,
   href   ?: string,
 }
 
-type BUTTON_CONFIG_TYPE = {
+export interface BUTTON_CONFIG_TYPE {
   activeClass   ?: boolean|string,
   animate       ?: boolean,
   animateSpeed  ?: ANIMATE_SPEED_TYPE,
@@ -59,29 +58,28 @@ type BUTTON_CONFIG_TYPE = {
   outline       ?: boolean,
   rounded       ?: ROUNDED_TYPE,
   shadow        ?: SHADOW_TYPE,
-  size          ?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0,
+  size          ?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0
 }
 
-type COLLAPSE_CONFIG_TYPE = {
+export interface COLLAPSE_CONFIG_TYPE {
   animate       ?: boolean,
   animateSpeed  ?: ANIMATE_SPEED_TYPE,
 }
 
-type DD_ITEM_CONFIG_TYPE = {
+export interface DD_ITEM_CONFIG_TYPE {
   activeClass     ?: string,
   class           ?: string,
   dividerClass    ?: string,
   headerClass     ?: string
 }
 
-type DD_CONFIG_TYPE = {
+export interface DD_CONFIG_TYPE {
   animate             ?: boolean,
   animateSpeed        ?: ANIMATE_SPEED_TYPE,
   animation           ?: 'slide-left' | 'slide-up' | 'slide-right' | 'slide-down' | 'fade' | 'zoom-in' | 'zoom-out',
   alignEnd            ?: boolean,
   backdrop            ?: boolean,
   closeOnClick        ?: boolean,
-  closeOnEsc          ?: boolean,
   closeOnOutsideClick ?: boolean,
   itemConfig          ?: DD_ITEM_CONFIG_TYPE,
   reset               ?: boolean,
@@ -90,14 +88,14 @@ type DD_CONFIG_TYPE = {
   standalone          ?: boolean,
 }
 
-type DD_DATA = {
+export interface DD_DATA {
   active     ?: boolean,
   url        ?: string,
   text       ?: string,
   type        : 'link' | 'divider' | 'header',
 }
 
-type MODAL_CONFIG_TYPE = {
+export interface MODAL_CONFIG_TYPE {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   animation       ?: 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
@@ -113,12 +111,13 @@ type MODAL_CONFIG_TYPE = {
   staticBackdrop  ?: boolean,
 }
 
-type NAV_CONFIG_TYPE = {
+export interface NAV_CONFIG_TYPE {
+  activeLinkStyle       ?: string,
   animate               ?: boolean,
   animateSpeed          ?: ANIMATE_SPEED_TYPE,
-  class                 ?: string,
   height                ?: 'sm' | 'md' | 'lg' | 'xl',
-  reset                 ?: boolean,
+  linkStyle             ?: string,
+  responsive            ?: 'md' | 'lg' | 'xl' | false,
   rounded               ?: ROUNDED_TYPE,
   scrollAmountToShrink  ?: number,
   scrollAmountToHide    ?: number,
@@ -126,7 +125,7 @@ type NAV_CONFIG_TYPE = {
   scrollClass           ?: string,
 }
 
-type NOTIFY_CONFIG_TYPE = {
+export interface NOTIFY_CONFIG_TYPE {
   class         ?: string,
   removeAfter   ?: number,
   removeOnClick ?: boolean,
@@ -135,7 +134,7 @@ type NOTIFY_CONFIG_TYPE = {
   style         ?: 'card'|'flat',
 }
 
-type OFFCANVAS_CONFIG_TYPE = {
+export interface OFFCANVAS_CONFIG_TYPE {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   backdrop        ?: boolean,
@@ -144,7 +143,7 @@ type OFFCANVAS_CONFIG_TYPE = {
   staticBackdrop  ?: boolean,
 }
 
-type POPUP_CONFIG_TYPE = {
+export interface POPUP_CONFIG_TYPE {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   backdrop        ?: boolean,
@@ -155,21 +154,21 @@ type POPUP_CONFIG_TYPE = {
   staticBackdrop  ?: boolean
 }
 
-type PROGRESS_CONFIG_TYPE = {
+export interface PROGRESS_CONFIG_TYPE {
   barClass        ?: string,
   height          ?: 'px' | 'sm' | 'md' | 'lg' | 'xl' | 'none',
   rounded         ?: ROUNDED_TYPE,
   roundedProgress ?: ROUNDED_TYPE,
 }
 
-type TABLE_CONFIG_TYPE = {
+export interface TABLE_CONFIG_TYPE {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   border          ?: 'x'|'y'|'both'|'none',
   borderColor     ?: string,
   hover           ?: boolean|string,
   reset           ?: boolean,
-  size            ?: 'sm'|'md'|'lg',
+  space           ?: 'compact'|'default'|'comfortable',
   stripe          ?: boolean|string,
   containerClass  ?: string,
   theadClass      ?: string,
@@ -177,7 +176,7 @@ type TABLE_CONFIG_TYPE = {
   trClass         ?: string,
 }
 
-type TAB_CONFIG_TYPE = {
+export interface TAB_CONFIG_TYPE {
   animate         ?: boolean,
   animateSpeed    ?: ANIMATE_SPEED_TYPE,
   activeTabClass  ?: object|string,
@@ -187,7 +186,7 @@ type TAB_CONFIG_TYPE = {
   tabClass        ?: object|string,
 }
 
-type TOOLTIP_CONFIG_TYPE = {
+export interface TOOLTIP_CONFIG_TYPE {
   animate       ?: boolean,
   animateSpeed  ?: ANIMATE_SPEED_TYPE,
   animation     ?: 'fade' | 'slide' | 'zoom-in' | 'zoom-out',
@@ -199,7 +198,7 @@ type TOOLTIP_CONFIG_TYPE = {
 }
 
 // FORM CONTROLS AND DATA TYPES
-type INPUT_CONFIG_TYPE = {
+export interface INPUT_CONFIG_TYPE {
   appearance        ?: 'default' | 'flat' | 'material',
   containerClass  ?: string,
   fileBtnClass    ?: string,
@@ -213,14 +212,14 @@ type INPUT_CONFIG_TYPE = {
   size              ?: 'none' |'xs' | 'sm' | 'md' | 'lg' | 'xl',
 }
 
-type LABEL_STYLE_TYPE = {
+export interface LABEL_STYLE_TYPE {
   class       ?: string,
   color         ?: string,
   marginBottom  ?: 0 | 2 | 4 | 6,
   textSize      ?: string,
 }
 
-type CHECKBOX_RADIO_CONFIG_TYPE = {
+export interface CHECKBOX_RADIO_CONFIG_TYPE {
   class     ?: string,
   disabled    ?: boolean,
   rounded     ?: ROUNDED_TYPE,
@@ -228,16 +227,9 @@ type CHECKBOX_RADIO_CONFIG_TYPE = {
   size        ?: 'md' | 'lg' | 'xl'
 }
 
-type SELECT_DATA_TYPE = {
+export interface SELECT_DATA_TYPE {
   disabled ?: boolean,
   selected ?: boolean,
   text      : string,
   value    ?: any,
 }
-
-export type { SITE, CORE, ANIMATE_SPEED_TYPE, ButtonType, INPUT_TYPE, ROUNDED_TYPE,
-  SHADOW_TYPE, ACCORDION_CONFIG_TYPE, BREADCRUMB_DATA_TYPE, BUTTON_CONFIG_TYPE,
-  COLLAPSE_CONFIG_TYPE, DD_CONFIG_TYPE, DD_DATA, MODAL_CONFIG_TYPE, NAV_CONFIG_TYPE,
-  NOTIFY_CONFIG_TYPE, OFFCANVAS_CONFIG_TYPE, POPUP_CONFIG_TYPE, PROGRESS_CONFIG_TYPE,
-  TAB_CONFIG_TYPE, TABLE_CONFIG_TYPE, TOOLTIP_CONFIG_TYPE, INPUT_CONFIG_TYPE,
-  LABEL_STYLE_TYPE, CHECKBOX_RADIO_CONFIG_TYPE, SELECT_DATA_TYPE}

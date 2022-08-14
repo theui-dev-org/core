@@ -1,55 +1,36 @@
-// const defaultTheme = require('tailwindcss/defaultTheme')
-
-// let withOpacity = (variableName) => {
-//   return ({ opacityValue }) => {
-//     if (opacityValue !== undefined) {
-//       return `rgba(var(${variableName}), ${opacityValue})`
-//     }
-//     return `rgb(var(${variableName}))`
-//   }
-// }
-
-// let brandColors = {
-//   "brand"		        : withOpacity("--brand"),
-//   "brand-active"    : withOpacity("--brand-active"),
-// }
-
-// let textColors  = {
-// 	"on-brand"    		: withOpacity("--text-on-brand"),
-// 	"primary"    		  : withOpacity("--ui-text-primary"),
-// }
-
-// let bgColors    = {
-//   "primary"					: withOpacity("--ui-bg-primary"),
-//   "secondary"       : withOpacity("--ui-bg-secondary"),
-//   "tertiary"        : withOpacity("--ui-bg-tertiary"),
-// }
-
+/** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 const config = {
   mode: "jit",
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        brand           : 'rgb(var(--ui-brand) / <alpha-value>)',
-        "brand-active"  : 'rgb(var(--ui-brand-active) / <alpha-value>)',
-        "on-brand"      : 'rgb(var(--ui-text-on-brand) / <alpha-value>)',
-        primary         : 'rgb(var(--ui-bg-primary) / <alpha-value>)',
-        secondary       : 'rgb(var(--ui-bg-secondary) / <alpha-value>)',
-        tertiary        : 'rgb(var(--ui-bg-tertiary) / <alpha-value>)',
+        brand                     : 'rgb(var(--ui-brand) / <alpha-value>)',
+        "brand-active"            : 'rgb(var(--ui-brand-active) / <alpha-value>)',
+        "brand-secondary"         : 'rgb(var(--ui-brand-secondary) / <alpha-value>)',
+        "brand-secondary-active"  : 'rgb(var(--ui-brand-secondary-active) / <alpha-value>)',
+        "on-brand"                : 'rgb(var(--ui-text-on-brand) / <alpha-value>)',
+        primary                   : 'rgb(var(--ui-bg-primary) / <alpha-value>)',
+        secondary                 : 'rgb(var(--ui-bg-secondary) / <alpha-value>)',
+        tertiary                  : 'rgb(var(--ui-bg-tertiary) / <alpha-value>)',
       },
       textColor : {
-        brand           : 'rgb(var(--ui-brand) / <alpha-value>)',
-        "brand-active"  : 'rgb(var(--ui-brand-active) / <alpha-value>)',
-        "on-brand"      : 'rgb(var(--ui-text-on-brand) / <alpha-value>)',
-        default         : 'rgb(var(--ui-text-default) / <alpha-value>)',
+        brand                     : 'rgb(var(--ui-brand) / <alpha-value>)',
+        "brand-active"            : 'rgb(var(--ui-brand-active) / <alpha-value>)',
+        "brand-secondary"         : 'rgb(var(--ui-brand-secondary) / <alpha-value>)',
+        "brand-secondary-active"  : 'rgb(var(--ui-brand-secondary-active) / <alpha-value>)',
+        "on-brand"                : 'rgb(var(--ui-text-on-brand) / <alpha-value>)',
+        default                   : 'rgb(var(--ui-text-default) / <alpha-value>)',
       },
       backgroundColor : {
-        brand           : 'rgb(var(--ui-brand) / <alpha-value>)',
-        "brand-active"  : 'rgb(var(--ui-brand-active) / <alpha-value>)',
-        primary         : 'rgb(var(--ui-bg-primary) / <alpha-value>)',
-        secondary       : 'rgb(var(--ui-bg-secondary) / <alpha-value>)',
-        tertiary        : 'rgb(var(--ui-bg-tertiary) / <alpha-value>)',
+        brand                     : 'rgb(var(--ui-brand) / <alpha-value>)',
+        "brand-active"            : 'rgb(var(--ui-brand-active) / <alpha-value>)',
+        "brand-secondary"         : 'rgb(var(--ui-brand-secondary) / <alpha-value>)',
+        "brand-secondary-active"  : 'rgb(var(--ui-brand-secondary-active) / <alpha-value>)',
+        primary                   : 'rgb(var(--ui-bg-primary) / <alpha-value>)',
+        secondary                 : 'rgb(var(--ui-bg-secondary) / <alpha-value>)',
+        tertiary                  : 'rgb(var(--ui-bg-tertiary) / <alpha-value>)',
       },
 			fontWeight: ['dark'],
 			fill : ['dark'],
@@ -57,6 +38,10 @@ const config = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    plugin(function ({ addVariant }) {
+      addVariant('not-first', '&:not(:first-child)')
+      addVariant('not-last', '&:not(:last-child)')
+    })
   ],
 }
 

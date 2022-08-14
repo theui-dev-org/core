@@ -1,7 +1,7 @@
 {
   "name": "@theui/core",
-  "version": "0.18.3",
-  "description": "TheUI core libraries for theui components.",
+  "version": "0.23.0",
+  "description": "Core library for TheUI components.",
   "main": "index.js",
   "author" : {
     "name" : "M B Parvez",
