@@ -1,4 +1,4 @@
-export type ANIMATE_SPEED_TYPE  = 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+export type ANIMATE_SPEED_TYPE  = boolean | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
 export type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none'
 export type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
 
@@ -22,16 +22,14 @@ export interface SITE {
 }
 
 export interface CORE {
-  isRounded             : boolean,
-  toggleTheme           : boolean|'system',
-  animate               : boolean,
-  animateSpeed          : ANIMATE_SPEED_TYPE,
-  reset                 : boolean,
+  isRounded   : boolean,
+  toggleTheme : boolean|'system',
+  animate     : ANIMATE_SPEED_TYPE,
+  reset       : boolean,
 }
 
 export interface ACCORDION_CONFIG_TYPE {
-  animate               ?: boolean,
-  animateSpeed          ?: ANIMATE_SPEED_TYPE,
+  animate               ?: ANIMATE_SPEED_TYPE,
   containerActiveClass  ?: Object|string,
   containerClass        ?: Object|string,
   contentActiveClass    ?: Object|string,
@@ -52,8 +50,7 @@ export interface BREADCRUMB_DATA_TYPE {
 
 export interface BUTTON_CONFIG_TYPE {
   activeClass   ?: boolean|string,
-  animate       ?: boolean,
-  animateSpeed  ?: ANIMATE_SPEED_TYPE,
+  animate       ?: ANIMATE_SPEED_TYPE,
   class         ?: string,
   outline       ?: boolean,
   rounded       ?: ROUNDED_TYPE,
@@ -62,8 +59,7 @@ export interface BUTTON_CONFIG_TYPE {
 }
 
 export interface COLLAPSE_CONFIG_TYPE {
-  animate       ?: boolean,
-  animateSpeed  ?: ANIMATE_SPEED_TYPE,
+  animate       ?: ANIMATE_SPEED_TYPE,
 }
 
 export interface DD_ITEM_CONFIG_TYPE {
@@ -74,8 +70,7 @@ export interface DD_ITEM_CONFIG_TYPE {
 }
 
 export interface DD_CONFIG_TYPE {
-  animate             ?: boolean,
-  animateSpeed        ?: ANIMATE_SPEED_TYPE,
+  animate             ?: ANIMATE_SPEED_TYPE,
   animation           ?: 'slide-left' | 'slide-up' | 'slide-right' | 'slide-down' | 'fade' | 'zoom-in' | 'zoom-out',
   alignEnd            ?: boolean,
   backdrop            ?: boolean,
@@ -96,8 +91,7 @@ export interface DD_DATA {
 }
 
 export interface MODAL_CONFIG_TYPE {
-  animate         ?: boolean,
-  animateSpeed    ?: ANIMATE_SPEED_TYPE,
+  animate         ?: ANIMATE_SPEED_TYPE,
   animation       ?: 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
   backdrop        ?: boolean,
   bodyClass       ?: string,
@@ -113,8 +107,7 @@ export interface MODAL_CONFIG_TYPE {
 
 export interface NAV_CONFIG_TYPE {
   activeLinkStyle       ?: string,
-  animate               ?: boolean,
-  animateSpeed          ?: ANIMATE_SPEED_TYPE,
+  animate               ?: ANIMATE_SPEED_TYPE,
   height                ?: 'sm' | 'md' | 'lg' | 'xl',
   linkStyle             ?: string,
   responsive            ?: 'md' | 'lg' | 'xl' | false,
@@ -135,8 +128,7 @@ export interface NOTIFY_CONFIG_TYPE {
 }
 
 export interface OFFCANVAS_CONFIG_TYPE {
-  animate         ?: boolean,
-  animateSpeed    ?: ANIMATE_SPEED_TYPE,
+  animate         ?: ANIMATE_SPEED_TYPE,
   backdrop        ?: boolean,
   closeOnEsc      ?: boolean,
   position        ?: 'top' | 'right' | 'bottom' | 'left',
@@ -144,8 +136,6 @@ export interface OFFCANVAS_CONFIG_TYPE {
 }
 
 export interface POPUP_CONFIG_TYPE {
-  animate         ?: boolean,
-  animateSpeed    ?: ANIMATE_SPEED_TYPE,
   backdrop        ?: boolean,
   backdropClass   ?: string,
   containerClass  ?: string,
@@ -162,8 +152,6 @@ export interface PROGRESS_CONFIG_TYPE {
 }
 
 export interface TABLE_CONFIG_TYPE {
-  animate         ?: boolean,
-  animateSpeed    ?: ANIMATE_SPEED_TYPE,
   border          ?: 'x'|'y'|'both'|'none',
   borderColor     ?: string,
   hover           ?: boolean|string,
@@ -177,8 +165,7 @@ export interface TABLE_CONFIG_TYPE {
 }
 
 export interface TAB_CONFIG_TYPE {
-  animate         ?: boolean,
-  animateSpeed    ?: ANIMATE_SPEED_TYPE,
+  animate         ?: ANIMATE_SPEED_TYPE,
   activeTabClass  ?: object|string,
   reset           ?: boolean,
   rounded         ?: ROUNDED_TYPE,
@@ -187,8 +174,7 @@ export interface TAB_CONFIG_TYPE {
 }
 
 export interface TOOLTIP_CONFIG_TYPE {
-  animate       ?: boolean,
-  animateSpeed  ?: ANIMATE_SPEED_TYPE,
+  animate       ?: ANIMATE_SPEED_TYPE,
   animation     ?: 'fade' | 'slide' | 'zoom-in' | 'zoom-out',
   bgColor       ?: string,
   inline        ?: boolean,
@@ -199,32 +185,13 @@ export interface TOOLTIP_CONFIG_TYPE {
 
 // FORM CONTROLS AND DATA TYPES
 export interface INPUT_CONFIG_TYPE {
-  appearance        ?: 'default' | 'flat' | 'material',
-  containerClass  ?: string,
-  fileBtnClass    ?: string,
-  grow              ?: boolean,
-  inputClass      ?: string|object,
-  inputFocusClass ?: string|object,
-  labelStyle        ?: LABEL_STYLE_TYPE,
-  marginBottom      ?: 0 | 4 | 8 | 12,
-  reset             ?: boolean,
-  rounded           ?: ROUNDED_TYPE,
-  size              ?: 'none' |'xs' | 'sm' | 'md' | 'lg' | 'xl',
-}
-
-export interface LABEL_STYLE_TYPE {
-  class       ?: string,
-  color         ?: string,
-  marginBottom  ?: 0 | 2 | 4 | 6,
-  textSize      ?: string,
-}
-
-export interface CHECKBOX_RADIO_CONFIG_TYPE {
-  class     ?: string,
-  disabled    ?: boolean,
-  rounded     ?: ROUNDED_TYPE,
-  reset       ?: boolean,
-  size        ?: 'md' | 'lg' | 'xl'
+  animate         ?: ANIMATE_SPEED_TYPE,
+  inputGrow       ?: boolean,
+  class           ?: string|object,
+  labelStyle      ?: string,
+  rounded         ?: ROUNDED_TYPE,
+  size            ?: 'none' | 'sm' | 'md' | 'lg' | 'xl',
+  variant         ?: 'filled' | 'bordered' | 'flat',
 }
 
 export interface SELECT_DATA_TYPE {

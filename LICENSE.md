@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Themesberg (Crafty Dwarf LLC) <company@themesberg.com>
+Copyright (c) 2022 TheUI <support@theui.dev>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

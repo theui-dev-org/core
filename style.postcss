@@ -1,3 +1,15 @@
+/*
+  Z-IINDEX SPECIFICATION
+  |- Dropdown                     = [bk 10, dd 11]
+  |- Navbar, sticky, {any}:sticky = [20]
+  |- fixed, {any}:fixed           = [30]
+  |- Offcanvas                    = [40]
+  |- Modal                        = [50]
+  |- Tooltop                      = [60]
+  |- Notification                 = [70]
+  |- Popup                        = [80]
+*/
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
@@ -31,31 +43,10 @@
   body{
     @apply bg-primary text-default;
   }
-  .dropdown .backdrop{
-    @apply z-10;
-  }
-  .dropdown-content{
-    @apply z-[11];
-  }
   .sticky, [class$=sticky]{
     @apply z-20;
   }
   .fixed, [class$=fixed]{
     @apply z-30;
-  }
-  .offcanvas{
-    @apply z-40;
-  }
-  .modal{
-    @apply z-50;
-  }
-  .popup{
-    @apply z-[60];
-  }
-  .tooltip{
-    @apply z-[70];
-  }
-  .notifications{
-    @apply z-[80];
   }
 }
