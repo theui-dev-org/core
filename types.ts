@@ -39,7 +39,7 @@ export interface ACCORDION_CONFIG_TYPE {
   size                  ?: 'compact' | 'default' | 'large',
   titleActiveClass      ?: Object|string,
   titleClass            ?: Object|string,
-  type                  ?: 'default' | 'flush',
+  variant               ?: 'default' | 'flush',
 }
 
 export interface BREADCRUMB_DATA_TYPE {

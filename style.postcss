@@ -30,7 +30,7 @@
     --ui-bg-secondary             : 243 244 246;  /* #F3F4F6 */
     --ui-bg-tertiary              : 229 231 235;  /* #E5E7EB */
 
-    --max-width                   : 1320px;
+    --max-width                   : 1408px;
   }
 
   :root.dark {
@@ -43,10 +43,10 @@
   body{
     @apply bg-primary text-default;
   }
-  .sticky, [class$=sticky]{
+  :global(.sticky, [class$=sticky]){
     @apply z-20;
   }
-  .fixed, [class$=fixed]{
+  :global(.fixed, [class$=fixed]){
     @apply z-30;
   }
 }

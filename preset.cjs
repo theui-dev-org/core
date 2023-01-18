@@ -1,9 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 const config = {
   mode: "jit",
   darkMode: 'class',
   theme: {
+    screens: {
+      'nano': '360px',
+      'xs': '480px',
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
         brand                     : 'rgb(var(--ui-brand) / <alpha-value>)',

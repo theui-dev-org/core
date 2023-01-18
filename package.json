@@ -1,6 +1,6 @@
 {
   "name": "theui",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.13",
   "description": "Core library for TheUI components.",
   "main": "index.js",
   "author": {
@@ -34,13 +34,14 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2",
-    "@tailwindcss/typography": "^0.5.4"
+    "@tailwindcss/typography": "^0.5.4",
+    "typescript": "^4.8.2"
   },
   "exports": {
-    ".": "./index.ts",
+    ".": "./index.js",
     "./package.json": "./package.json",
     "./preset.cjs": "./preset.cjs",
     "./style": "./style.postcss",
-    "./types.ts": "./types.ts"
+    "./types": "./types.js"
   }
 }
