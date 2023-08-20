@@ -1,6 +1,7 @@
-export type ANIMATE_SPEED_TYPE  = boolean | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
-export type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none'
+export type ANIMATE_SPEED_TYPE  = boolean | null | undefined | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+export type ROUNDED_TYPE        = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none' | boolean | undefined
 export type SHADOW_TYPE         = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
+export type PRELOAD             = 'hover' | 'tap' | undefined
 
 export interface SITE {
   siteName          : string,
@@ -30,15 +31,15 @@ export interface CORE {
 
 export interface ACCORDION_CONFIG_TYPE {
   animate               ?: ANIMATE_SPEED_TYPE,
-  containerActiveClass  ?: Object|string,
-  containerClass        ?: Object|string,
-  contentActiveClass    ?: Object|string,
-  contentClass          ?: Object|string,
+  containerActiveClass  ?: Object|string|undefined,
+  containerClass        ?: Object|string|undefined,
+  contentActiveClass    ?: Object|string|undefined,
+  contentClass          ?: Object|string|undefined,
   gap                   ?: 0|2|4|8|12|16,
   rounded               ?: ROUNDED_TYPE,
   size                  ?: 'compact' | 'default' | 'large',
-  titleActiveClass      ?: Object|string,
-  titleClass            ?: Object|string,
+  titleActiveClass      ?: Object|string|undefined,
+  titleClass            ?: Object|string|undefined,
   variant               ?: 'default' | 'flush',
 }
 
@@ -88,6 +89,7 @@ export interface DD_DATA {
   url        ?: string,
   text       ?: string,
   type        : 'link' | 'divider' | 'header',
+  preload     : PRELOAD
 }
 
 export interface MODAL_CONFIG_TYPE {
@@ -152,6 +154,7 @@ export interface PROGRESS_CONFIG_TYPE {
 }
 
 export interface TABLE_CONFIG_TYPE {
+  animate         ?: ANIMATE_SPEED_TYPE,
   border          ?: 'x'|'y'|'both'|'none',
   borderColor     ?: string,
   hover           ?: boolean|string,

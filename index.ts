@@ -1,6 +1,6 @@
 import type { ANIMATE_SPEED_TYPE, ROUNDED_TYPE, SHADOW_TYPE } from './types.js'
 
-export let getKey = (obj: object, key: string): any => obj[key]||'_NULL_'
+export let getKey = (obj: Record<string, any>, key: string): any => obj[key] || '_NULL_';
 
 export let randNum = (min: number = 10, max: number = 99): number => Math.floor(Math.random() * (max - min + 1) ) + min
 
@@ -33,8 +33,8 @@ export let animate = (animate: ANIMATE_SPEED_TYPE, type: string = ''): string =>
   return  !animate ? ' tui-no-animate' : (duration + ' transition-all')
 }
 
-export let rounded = (value: ROUNDED_TYPE|boolean, side:string = 'all'): string => {
-  if(value=='none' || value === false) return ' rounded-none'
+export let rounded = (value: ROUNDED_TYPE, side: string = 'all'): string => {
+  if (value == 'none' || !value) return ' rounded-none'
   if(side == 'top'){
     return  value=='sm' ? ' rounded-t' : value=='lg'   ? ' rounded-t-lg' : (value=='md'||value===true) ? ' rounded-t-md' :
             value=='xl' ? ' rounded-t-xl' : value=='full' ? ' rounded-t-full' : ' '
