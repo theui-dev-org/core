@@ -1,6 +1,6 @@
-export type ANIMATE_SPEED_TYPE = boolean | null | undefined | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+export type ANIMATE_SPEED_TYPE = undefined | false | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
 export type ROUNDED_TYPE = 'sm' | 'md' | 'lg' | 'xl' | 'full' | false | undefined
-export type SHADOW_TYPE = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'
+export type SHADOW_TYPE = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | undefined
 export type PRELOAD = 'hover' | 'tap' | undefined
 
 export type SITE = {
