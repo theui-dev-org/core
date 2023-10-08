@@ -2,6 +2,7 @@ export type ANIMATE_SPEED_TYPE = undefined | false | 'slower' | 'slow' | 'normal
 export type ROUNDED_TYPE = 'sm' | 'md' | 'lg' | 'xl' | 'full' | false | undefined
 export type SHADOW_TYPE = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | undefined
 export type PRELOAD = 'hover' | 'tap' | undefined
+export type TABLE_ROW = object | string[] | (object | string[])[] | null
 
 export type SITE = {
   siteName          : string,
@@ -50,29 +51,29 @@ export type BREADCRUMB_DATA_TYPE = {
 }
 
 export type BUTTON_CONFIG_TYPE = {
-  active          : true | false, // false
+  active          ?: true | false, // false
   btnClass        ?: string | undefined,  // 
   btnActiveClass  ?: string | undefined,  // 
   btnHoverClass   ?: string | undefined,  // 
-  animate         : ANIMATE_SPEED_TYPE, // 
-  outline         : boolean, // false
+  animate         ?: ANIMATE_SPEED_TYPE, // 
+  outline         ?: boolean, // false
   rounded         ?: ROUNDED_TYPE,  // 
-  shadow          : SHADOW_TYPE, // none
-  size            : 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0 // md
+  shadow          ?: SHADOW_TYPE, // none
+  size            ?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0 // md
 }
 
 export type DD_CONFIG_TYPE = {
   animate             ?: ANIMATE_SPEED_TYPE, // 'fast
   animation           ?: 'slide-left' | 'slide-up' | 'slide-right' | 'slide-down' | 'fade' | 'zoom-in' | 'zoom-out',
-  alignToEnd          : boolean, // false
+  alignToEnd          ?: boolean, // false
   backdrop            ?: boolean, // false
-  closeOnClick        : boolean, // true
-  closeOnOutsideClick : boolean, // true
+  closeOnClick        ?: boolean, // true
+  closeOnOutsideClick ?: boolean, // true
   itemConfig          ?: DD_ITEM_CONFIG_TYPE,
   reset               ?: boolean, //false
   rounded             ?: ROUNDED_TYPE, // 
   size                ?: 'sm' | 'md' | 'lg' | 'full' | 'auto', // md
-  standalone          : boolean, // true
+  standalone          ?: boolean, // true
 }
 
 export type DD_ITEM_CONFIG_TYPE = {
@@ -109,6 +110,7 @@ export type NAV_CONFIG_TYPE = {
   activeLinkStyle       ?: string, // 'p-3 text-default text-sm'
   animate               ?: ANIMATE_SPEED_TYPE, // fast'
   height                ?: 'sm' | 'md' | 'lg' | 'xl', // 'md'
+  navInner              ?: string,
   linkStyle             ?: string, // 'p-3 text-gray-700 dark:text-gray-300 hover:text-default text-sm'
   responsive            ?: 'md' | 'lg' | 'xl' | false, // 'lg'
   rounded               ?: ROUNDED_TYPE, // true
@@ -119,12 +121,10 @@ export type NAV_CONFIG_TYPE = {
 }
 
 export type NOTIFY_CONFIG_TYPE = {
-  class         ?: string,
   removeAfter   ?: number,
   removeOnClick ?: boolean,
-  reset         ?: boolean,
-  rounded       ?: ROUNDED_TYPE,
-  style         ?: 'card' | 'flat',
+  rounded       : ROUNDED_TYPE,
+  variant       : 'card' | 'flat'
 }
 
 export type OFFCANVAS_CONFIG_TYPE = {
@@ -145,9 +145,10 @@ export type POPUP_CONFIG_TYPE = {
 }
 
 export type PROGRESS_CONFIG_TYPE = {
-  barClass        ?: string,
+  barClass?: string,
   height          ?: 'px' | 'sm' | 'md' | 'lg' | 'xl' | 'none',
   rounded         ?: ROUNDED_TYPE,
+  trackClass      ?: string,
   roundedProgress ?: ROUNDED_TYPE,
 }
 
@@ -160,8 +161,6 @@ export type TABLE_CONFIG_TYPE = {
   space           ?: 'compact' | 'default' | 'comfortable',
   stripe          ?: boolean | string,  // false
   containerClass  ?: string,
-  theadClass      ?: string,
-  tbodyClass      ?: string,
   trClass         ?: string,
 }
 
@@ -189,13 +188,13 @@ export type TOOLTIP_CONFIG_TYPE = {
 export type INPUT_VARIANT_TYPE = 'filled' | 'bordered' | 'flat'
 
 export type INPUT_CONFIG_TYPE = {
-  animate: ANIMATE_SPEED_TYPE,  // ''normal'
-  inputGrow: boolean,  // true
-  labelStyle?: string,  // ''
-  reset?: boolean,  // false
-  rounded: ROUNDED_TYPE,  // 'md'
-  size: 'none' | 'sm' | 'md' | 'lg' | 'xl',  // 'md'
-  variant: INPUT_VARIANT_TYPE,  // 'bordered'
+  animate     ?: ANIMATE_SPEED_TYPE,  // ''normal'
+  inputGrow   ?: boolean,  // true
+  labelStyle  ?: string,  // ''
+  reset       ?: boolean,  // false
+  rounded     ?: ROUNDED_TYPE,  // 'md'
+  size        ?: 'none' | 'sm' | 'md' | 'lg' | 'xl',  // 'md'
+  variant     ?: INPUT_VARIANT_TYPE,  // 'bordered'
 }
 
 export type SELECT_DATA_TYPE = {
@@ -204,3 +203,6 @@ export type SELECT_DATA_TYPE = {
   text      : string,
   value     ?: any,
 }
+
+
+
