@@ -51,14 +51,12 @@ export type BREADCRUMB_DATA_TYPE = {
 }
 
 export type BUTTON_CONFIG_TYPE = {
-  active          ?: true | false, // false
-  btnClass        ?: string | undefined,  // 
-  btnActiveClass  ?: string | undefined,  // 
-  btnHoverClass   ?: string | undefined,  // 
-  animate         ?: ANIMATE_SPEED_TYPE, // 
-  outline         ?: boolean, // false
-  rounded         ?: ROUNDED_TYPE,  // 
-  shadow          ?: SHADOW_TYPE, // none
+  active          ?: true | false,        // false
+  isActive        ?: boolean,  //
+  animate         ?: ANIMATE_SPEED_TYPE,  // 
+  outline         ?: boolean,             // false
+  rounded         ?: ROUNDED_TYPE,        // 
+  shadow          ?: SHADOW_TYPE,         // none
   size            ?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0 // md
 }
 
