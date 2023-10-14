@@ -70,7 +70,7 @@ export type DD_CONFIG_TYPE = {
   itemConfig          ?: DD_ITEM_CONFIG_TYPE,
   reset               ?: boolean, //false
   rounded             ?: ROUNDED_TYPE, // 
-  size                ?: 'sm' | 'md' | 'lg' | 'full' | 'auto', // md
+  size                ?: 'sm' | 'md' | 'lg' | 'full' | 'auto' | 'custom', // md
   standalone          ?: boolean, // true
 }
 
