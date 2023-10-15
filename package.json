@@ -1,6 +1,6 @@
 {
   "name": "theui",
-  "version": "1.0.0-beta.18",
+  "version": "1.0.0-beta.21",
   "description": "Core library for TheUI components.",
   "main": "index.js",
   "author": {

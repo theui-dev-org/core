@@ -90,18 +90,20 @@ export type DD_DATA = {
 }
 
 export type MODAL_CONFIG_TYPE = {
-  animate         : ANIMATE_SPEED_TYPE, // 'fast'
-  animation       ?: 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
-  backdrop        : boolean, // true
-  bodyClass       : string, // ' '
-  closeBtn        : boolean, // true
-  closeOnEsc      : boolean, // true
-  contentClass    ?: string,
-  position        ?: 'top' | 'center' | 'bottom',
-  reset           : boolean, // false
-  rounded         ?: ROUNDED_TYPE,
-  size            ?: 'sm' | 'md' | 'lg' | 'full', // md
-  staticBackdrop  : boolean // false
+  animate           : ANIMATE_SPEED_TYPE, // 'fast'
+  animation         ?: 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
+  backdrop          : boolean, // true
+  closeBtn          : boolean, // true
+  closeOnEsc        : boolean, // true
+  modalFooterClass  ?: string,
+  modalHeaderClass  ?: string,
+  modalInnerClass   : string, // ' '
+  modalOuterClass   : string,
+  position          ?: 'top' | 'center' | 'bottom',
+  reset             : boolean, // false
+  rounded           ?: ROUNDED_TYPE,
+  size              ?: 'sm' | 'md' | 'lg' | 'full', // md
+  staticBackdrop    : boolean // false
 }
 
 export type NAV_CONFIG_TYPE = {
@@ -126,11 +128,16 @@ export type NOTIFY_CONFIG_TYPE = {
 }
 
 export type OFFCANVAS_CONFIG_TYPE = {
-  animate         ?: ANIMATE_SPEED_TYPE, // 'fast'
-  backdrop        ?: boolean, // true
-  closeOnEsc      ?: boolean, // true
-  position        ?: 'top' | 'right' | 'bottom' | 'left',
-  staticBackdrop  ?: boolean // false
+  animate?: ANIMATE_SPEED_TYPE, // 'fast'
+  backdrop?: boolean, // true
+  closeOnEsc?: boolean, // true
+  position?: 'top' | 'right' | 'bottom' | 'left',
+  staticBackdrop?: boolean // false
+}
+
+export type PAGINATION_DATA_TYPE = {
+  url: string, // true
+  active?: boolean, // true
 }
 
 export type POPUP_CONFIG_TYPE = {
