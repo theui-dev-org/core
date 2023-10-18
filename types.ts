@@ -179,13 +179,13 @@ export type TAB_CONFIG_TYPE = {
 }
 
 export type TOOLTIP_CONFIG_TYPE = {
-  animate   ?: ANIMATE_SPEED_TYPE,  // 'normal'
+  animate   ?: ANIMATE_SPEED_TYPE,
   animation ?: 'fade' | 'slide' | 'zoom-in' | 'zoom-out',
   bgColor   ?: string,  // '#1F2937'
-  inline    ?: boolean,  // true
   position  ?: 'left' | 'top' | 'right' | 'bottom',
   reset     ?: boolean,  // true
-  rounded   ?: ROUNDED_TYPE
+  rounded   ?: ROUNDED_TYPE,
+  triggerBy ?: 'hover' | 'click' | string
 }
 
 // FORM CONTROLS AND DATA TYPES
