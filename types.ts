@@ -1,8 +1,10 @@
-export type ANIMATE_SPEED_TYPE = undefined | false | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
-export type ROUNDED_TYPE = 'sm' | 'md' | 'lg' | 'xl' | 'full' | false | undefined
-export type SHADOW_TYPE = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | undefined
+export type ANIMATE_SPEED = undefined | false | 'slower' | 'slow' | 'normal' | 'fast' | 'faster'
+export type ROUNDED = 'sm' | 'md' | 'lg' | 'xl' | 'full' | false | undefined
+export type SHADOW = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | undefined
 export type PRELOAD = 'hover' | 'tap' | undefined
 export type TABLE_ROW = object | string[] | (object | string[])[] | null
+export type BUTTON_SIZE = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0
+export type INPUT_VARIANT = 'filled' | 'bordered' | 'flat'
 
 export type SITE = {
   siteName          : string,
@@ -26,59 +28,14 @@ export type SITE = {
 export type CORE = {
   isRounded   : boolean,
   toggleTheme : boolean | 'system',
-  animate     : ANIMATE_SPEED_TYPE,
+  animate     : ANIMATE_SPEED,
   reset       : boolean,
 }
 
-export type ACCORDION_CONFIG_TYPE = {
-  animate               : ANIMATE_SPEED_TYPE, // fast
-  containerClass        : string | undefined, // 'mb-4'
-  containerActiveClass  : string | undefined, //'mb-4'
-  contentClass          : string | undefined, // classes
-  contentActiveClass    : string | undefined, // classes
-  gap                   ?: 0 | 2 | 4 | 8 | 12 | 16
-  rounded               ?: ROUNDED_TYPE,
-  size                  ?: 'compact' | 'default' | 'large',
-  titleClass            ?: string | undefined,
-  titleActiveClass      ?: string | undefined,
-  flush                 ?: boolean
-}
-
-export type BREADCRUMB_DATA_TYPE = {
-  active  ?: boolean,
-  text    : string,
-  href    ?: string,
-}
-
-export type BUTTON_CONFIG_TYPE = {
-  active          ?: true | false,        // false
-  isActive        ?: boolean,  //
-  animate         ?: ANIMATE_SPEED_TYPE,  // 
-  outline         ?: boolean,             // false
-  rounded         ?: ROUNDED_TYPE,        // 
-  shadow          ?: SHADOW_TYPE,         // none
-  size            ?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 0 // md
-}
-
-export type DD_CONFIG_TYPE = {
-  animate             ?: ANIMATE_SPEED_TYPE, // 'fast
-  animation           ?: 'slide-left' | 'slide-up' | 'slide-right' | 'slide-down' | 'fade' | 'zoom-in' | 'zoom-out',
-  alignToEnd          ?: boolean, // false
-  backdrop            ?: boolean, // false
-  closeOnClick        ?: boolean, // true
-  closeOnOutsideClick ?: boolean, // true
-  itemConfig          ?: DD_ITEM_CONFIG_TYPE,
-  reset               ?: boolean, //false
-  rounded             ?: ROUNDED_TYPE, // 
-  size                ?: 'sm' | 'md' | 'lg' | 'full' | 'auto' | 'custom', // md
-  standalone          ?: boolean, // true
-}
-
-export type DD_ITEM_CONFIG_TYPE = {
-  activeClass   ?: string,
-  class         ?: string,
-  dividerClass  ?: string,
-  headerClass   ?: string
+export type BREADCRUMB_DATA = {
+  active?: boolean,
+  text: string,
+  href?: string,
 }
 
 export type DD_DATA = {
@@ -89,76 +46,27 @@ export type DD_DATA = {
   preload   : PRELOAD
 }
 
-export type MODAL_CONFIG_TYPE = {
-  animate           : ANIMATE_SPEED_TYPE, // 'fast'
-  animation         ?: 'slide-down' | 'slide-up' | 'fade' | 'zoom-in' | 'zoom-out',
-  backdrop          : boolean, // true
-  closeBtn          : boolean, // true
-  closeOnEsc        : boolean, // true
-  modalFooterClass  ?: string,
-  modalHeaderClass  ?: string,
-  modalInnerClass   : string, // ' '
-  modalOuterClass   : string,
-  position          ?: 'top' | 'center' | 'bottom',
-  reset             : boolean, // false
-  rounded           ?: ROUNDED_TYPE,
-  size              ?: 'sm' | 'md' | 'lg' | 'full', // md
-  staticBackdrop    : boolean // false
-}
-
-export type NAV_CONFIG_TYPE = {
+export type NAV_CONFIG = {
   activeLinkStyle       ?: string, // 'p-3 text-default text-sm'
-  animate               ?: ANIMATE_SPEED_TYPE, // fast'
+  animate               ?: ANIMATE_SPEED, // fast'
   height                ?: 'sm' | 'md' | 'lg' | 'xl', // 'md'
   navInner              ?: string,
   linkStyle             ?: string, // 'p-3 text-gray-700 dark:text-gray-300 hover:text-default text-sm'
   responsive            ?: 'md' | 'lg' | 'xl' | false, // 'lg'
-  rounded               ?: ROUNDED_TYPE, // true
+  rounded               ?: ROUNDED, // true
   scrollAmountToShrink  ?: number, // 64
   scrollAmountToHide    ?: number, // 32
   scrollBehavior        ?: 'fixed' | 'default' | 'shrinkOnScrollDown' | 'hideOnScrollDown' | 'shrinkAndHide' // 'shrinkAndHide'
   scrollClass           ?: string, // 'bg-white dark:bg-secondary shadow-black/10 shadow-2xl md:px-4'
 }
 
-export type NOTIFY_CONFIG_TYPE = {
-  removeAfter   ?: number,
-  removeOnClick ?: boolean,
-  rounded       : ROUNDED_TYPE,
-  variant       : 'card' | 'flat'
-}
-
-export type OFFCANVAS_CONFIG_TYPE = {
-  animate?: ANIMATE_SPEED_TYPE, // 'fast'
-  backdrop?: boolean, // true
-  closeOnEsc?: boolean, // true
-  position?: 'top' | 'right' | 'bottom' | 'left',
-  staticBackdrop?: boolean // false
-}
-
-export type PAGINATION_DATA_TYPE = {
+export type PAGINATION_DATA = {
   url: string, // true
   active?: boolean, // true
 }
 
-export type POPUP_CONFIG_TYPE = {
-  backdrop        ?: boolean, // true
-  backdropClass   ?: string, // 'bg-black/50'
-  containerClass  ?: string, // 'flex items-center justify-center'
-  contentClass    ?: string, // 'bg-white dark:bg-gray-800 max-w-3xl max-h-screen p-8'
-  rounded         ?: ROUNDED_TYPE, // 'xl'
-  staticBackdrop  ?: boolean // false
-}
-
-export type PROGRESS_CONFIG_TYPE = {
-  barClass?: string,
-  height          ?: 'px' | 'sm' | 'md' | 'lg' | 'xl' | 'none',
-  rounded         ?: ROUNDED_TYPE,
-  trackClass      ?: string,
-  roundedProgress ?: ROUNDED_TYPE,
-}
-
-export type TABLE_CONFIG_TYPE = {
-  animate         ?: ANIMATE_SPEED_TYPE,  // true
+export type TABLE_CONFIG = {
+  animate         ?: ANIMATE_SPEED,  // true
   border          ?: 'x' | 'y' | 'both' | 'none',  // 'y'
   borderColor     ?: string,  // 'border-gray-200/80 dark:border-gray-800/80'
   hover           ?: boolean | string,  // false
@@ -169,45 +77,30 @@ export type TABLE_CONFIG_TYPE = {
   trClass         ?: string,
 }
 
-export type TAB_CONFIG_TYPE = {
-  animate         ?: ANIMATE_SPEED_TYPE,  // true
+export type TAB_CONFIG = {
+  animate         ?: ANIMATE_SPEED,  // true
   activeTabClass  ?: object | string, // variant === "pills" ? 'bg-brand text-white' : 'border-0 border-b-2 border-brand text-brand bg-primary'
   reset           ?: boolean,
-  rounded         ?: ROUNDED_TYPE,
-  shadow          ?: SHADOW_TYPE,
+  rounded         ?: ROUNDED,
+  shadow          ?: SHADOW,
   tabClass        ?: object | string  // variant === "pills" ? 'bg-secondary hover:bg-brand' : 'border-0 border-b-2 border-secondary bg-primary'
-}
-
-export type TOOLTIP_CONFIG_TYPE = {
-  animate   ?: ANIMATE_SPEED_TYPE,
-  animation ?: 'fade' | 'slide' | 'zoom-in' | 'zoom-out',
-  bgColor   ?: string,  // '#1F2937'
-  position  ?: 'left' | 'top' | 'right' | 'bottom',
-  reset     ?: boolean,  // true
-  rounded   ?: ROUNDED_TYPE,
-  triggerBy ?: 'hover' | 'click' | string
 }
 
 // FORM CONTROLS AND DATA TYPES
 
-export type INPUT_VARIANT_TYPE = 'filled' | 'bordered' | 'flat'
-
-export type INPUT_CONFIG_TYPE = {
-  animate     ?: ANIMATE_SPEED_TYPE,  // ''normal'
+export type INPUT_CONFIG = {
+  animate     ?: ANIMATE_SPEED,  // ''normal'
   inputGrow   ?: boolean,  // true
   labelStyle  ?: string,  // ''
   reset       ?: boolean,  // false
-  rounded     ?: ROUNDED_TYPE,  // 'md'
+  rounded     ?: ROUNDED,  // 'md'
   size        ?: 'none' | 'sm' | 'md' | 'lg' | 'xl',  // 'md'
-  variant     ?: INPUT_VARIANT_TYPE,  // 'bordered'
+  variant     ?: INPUT_VARIANT,  // 'bordered'
 }
 
-export type SELECT_DATA_TYPE = {
+export type SELECT_DATA = {
   disabled  ?: boolean,
   selected  ?: boolean,
   text      : string,
   value     ?: any,
 }
-
-
-
