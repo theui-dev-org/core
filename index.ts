@@ -1,4 +1,4 @@
-import type { ANIMATE_SPEED_TYPE, ROUNDED_TYPE, SHADOW_TYPE } from './types.js'
+import type { ANIMATE_SPEED, ROUNDED, SHADOW } from './types.js'
 
 export let getKey = (obj: Record<string, any>, key: string): any => obj[key] || '_NULL_';
 
@@ -12,7 +12,7 @@ export let generateToken = (prefix: string = "_id"): string => {
 // ===================================
 // Tailwind CSS class getter
 // ===================================
-export let animate = (animate: ANIMATE_SPEED_TYPE, type: string = ''): string => {
+export let animate = (animate: ANIMATE_SPEED, type: string = ''): string => {
   if(type == 'file'){
     return  (' ') + (
       !animate ? 'file:tui-no-animate' : 'file:tui-animate file:transition-all file:ease-in-out ' +
@@ -32,7 +32,7 @@ export let animate = (animate: ANIMATE_SPEED_TYPE, type: string = ''): string =>
   return  !animate ? ' tui-no-animate' : (duration + ' transition-all')
 }
 
-export let rounded = (value: ROUNDED_TYPE, side: string = 'all'): string => {
+export let rounded = (value: ROUNDED, side: string = 'all'): string => {
   if (!value) return ' rounded-none'
   if(side == 'top'){
     return  value=='sm' ? ' rounded-t' : value=='lg'   ? ' rounded-t-lg' : (value=='md'||!!value) ? ' rounded-t-md' :
@@ -57,7 +57,7 @@ export let rounded = (value: ROUNDED_TYPE, side: string = 'all'): string => {
   return ' '
 }
 
-export let roundedFileBtn = (value: ROUNDED_TYPE, side:string = 'all'): string => {
+export let roundedFileBtn = (value: ROUNDED, side:string = 'all'): string => {
   if(!value) return ' !file:rounded-none'
   if(side == 'top'){
     return  value=='sm' ? ' file:rounded-t' : value=='lg'       ? ' file:rounded-t-lg' : (value=='md'||!!value) ? ' file:rounded-t-md' :
@@ -82,7 +82,7 @@ export let roundedFileBtn = (value: ROUNDED_TYPE, side:string = 'all'): string =
   return ' '
 }
 
-export let shadow = (size?: SHADOW_TYPE) => {
+export let shadow = (size?: SHADOW) => {
   if(!size) return ' shadow-none'
   return  (size==='md')  ? ' shadow-md'  : (size==='sm')    ? ' shadow-sm'    :
           (size==='lg')  ? ' shadow-lg'  : (size==='xl')    ? ' shadow-xl'    :
